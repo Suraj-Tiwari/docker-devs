@@ -2,3 +2,4 @@
 .vscode
 openproject
 LetsEncryptServer
+.DS_Store
