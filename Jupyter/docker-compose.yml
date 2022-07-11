@@ -6,7 +6,7 @@ services:
     image: jupyter-minimal-py-js:latest
     restart: always
     user: root
-    working_dir: "/home/suraj/work"
+    working_dir: "/home/jupyter/work"
     environment:
       NB_USER: "jupyter"
       CHOWN_HOME: "yes"
