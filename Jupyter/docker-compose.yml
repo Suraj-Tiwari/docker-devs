@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  jupyter:
+    build: .
+    image: jupyter-minimal-py-js:latest
+    restart: always
+    user: root
+    working_dir: "/home/suraj/work"
+    environment:
+      NB_USER: "jupyter"
+      CHOWN_HOME: "yes"
+      GRANT_SUDO: "yes"
+      JUPYTER_TOKEN: "password"
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./workbooks:/home/jupyter/work
+      - ./config:/home/jupyter/.jupyter
