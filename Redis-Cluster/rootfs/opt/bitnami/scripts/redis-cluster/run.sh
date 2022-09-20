@@ -30,6 +30,16 @@ else
     ARGS+=("--protected-mode" "no")
 fi
 
+# Load modules
+ARGS+=("--loadmodule" "/opt/bitnami/redis/modules/redisai.so")
+ARGS+=("--loadmodule" "/opt/bitnami/redis/modules/redisearch.so")
+ARGS+=("--loadmodule" "/opt/bitnami/redis/modules/redisgraph.so")
+ARGS+=("--loadmodule" "/opt/bitnami/redis/modules/redistimeseries.so")
+ARGS+=("--loadmodule" "/opt/bitnami/redis/modules/rejson.so")
+ARGS+=("--loadmodule" "/opt/bitnami/redis/modules/redisbloom.so")
+ARGS+=("--loadmodule" "/opt/bitnami/redis/modules/redisgears.so")
+ARGS+=("Plugin" "/opt/bitnami/redis/modules/redisgears.so")
+
 ARGS+=("$@")
 
 if is_boolean_yes "$REDIS_CLUSTER_CREATOR" && ! [[ -f "${REDIS_DATA_DIR}/nodes.conf" ]]; then
