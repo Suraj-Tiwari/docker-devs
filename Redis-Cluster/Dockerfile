@@ -35,10 +35,11 @@ RUN chmod g+rwX /opt/bitnami
 
 COPY rootfs /
 
+RUN /opt/bitnami/scripts/redis-cluster/postunpack.sh
+
 # Copy all modules like a lazy person
 COPY --from="builder" /usr/lib/redis/modules/* /opt/bitnami/redis/modules/
 
-RUN /opt/bitnami/scripts/redis-cluster/postunpack.sh
 ENV APP_VERSION="7.0.4" \
     BITNAMI_APP_NAME="redis-cluster" \
     PATH="/opt/bitnami/redis/bin:/opt/bitnami/common/bin:$PATH"
