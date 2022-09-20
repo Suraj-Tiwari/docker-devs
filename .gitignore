@@ -3,3 +3,4 @@
 openproject
 LetsEncryptServer
 .DS_Store
+InfluxDB/data
