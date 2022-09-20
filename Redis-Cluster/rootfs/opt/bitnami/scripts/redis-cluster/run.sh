@@ -38,7 +38,7 @@ ARGS+=("--loadmodule" "/opt/bitnami/redis/modules/redistimeseries.so")
 ARGS+=("--loadmodule" "/opt/bitnami/redis/modules/rejson.so")
 ARGS+=("--loadmodule" "/opt/bitnami/redis/modules/redisbloom.so")
 ARGS+=("--loadmodule" "/opt/bitnami/redis/modules/redisgears.so")
-ARGS+=("Plugin" "/opt/bitnami/redis/modules/redisgears.so")
+ARGS+=("Plugin" "/var/opt/redislabs/modules/rg/plugin/gears_python.so")
 
 ARGS+=("$@")
 
