@@ -12,7 +12,7 @@ ENV HOME="/" \
 COPY prebuildfs /
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Install required system packages and dependencies
-RUN install_packages acl ca-certificates curl gzip libc6 libssl1.1 procps tar
+RUN install_packages acl ca-certificates curl gzip libc6 libssl1.1 procps tar libgomp1 git
 RUN mkdir -p /tmp/bitnami/pkg/cache/ && cd /tmp/bitnami/pkg/cache/ && \
     if [ ! -f redis-7.0.4-3-linux-${OS_ARCH}-debian-11.tar.gz ]; then \
       curl -SsLf https://downloads.bitnami.com/files/stacksmith/redis-7.0.4-3-linux-${OS_ARCH}-debian-11.tar.gz -O ; \
